@@ -1,0 +1,14 @@
+[Unit]
+Description=Monitoreo de cambios en /home/alejandro/
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /home/alejandro/ejercicio3.sh
+Restart=always
+User=alejandro
+WorkingDirectory=/home/alejandro/
+StandardOutput=append:/home/alejandro/ejercicio3.log
+StandardError=append:/home/alejandro/ejercicio3_error.log
+
+[Install]
+WantedBy=multi-user.target
